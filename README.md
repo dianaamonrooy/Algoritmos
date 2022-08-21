@@ -3,7 +3,7 @@
 **_Programa:_** Ingeniería de Sistemas y Computación  
 **_Semestre:_** 2022-2  
 ## _Contenido:_
-* Labs:   
-  - Lab1: Python (bases, Pandas, Numpy, DataFrame)
+* **Lab1**:   
+  - **_DMONROYM_UNAL_lab1.ipynb:_** Python (bases, Pandas, Numpy, DataFrame)
 
 
