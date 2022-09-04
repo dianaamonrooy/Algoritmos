@@ -1,6 +1,9 @@
 𝑳𝒂𝒃 2: 𝑺𝒆𝒄𝒖𝒆𝒏𝒄𝒊𝒂 𝒅𝒆𝒍 𝑮𝒆𝒏𝒐𝒎𝒂 𝑽𝒊𝒓𝒂𝒍 𝒅𝒆 𝒓𝒆𝒇𝒆𝒓𝒆𝒏𝒄𝒊𝒂 𝑺𝒂𝒓𝒔-𝑪𝒐𝒗 2
 𝑮𝒓𝒖𝒑𝒐: 6
 
+La función findAll(S,T):
+* Retorna el número de recurrencias de T encontradas en S.
+* Y por cada recurrencia, devuelve la posición inicial y final de la misma dentro de S.
 
 -- 𝐂𝐚́𝐥𝐜𝐮𝐥𝐨 𝐁𝐢𝐠 𝐎 -- 
 El cálculo de la complejidad teórica de la función estuvo determinado de la siguiente forma:
