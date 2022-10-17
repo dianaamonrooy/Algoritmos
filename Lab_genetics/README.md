@@ -20,17 +20,6 @@ def geneticAlgorithm(gS, pS, mP, nG, fO, sR):
   
   population = []  ----------------------------------------------------> O(1)
 
-**Complejidad Específica**
-
-```
-O[sR + pS + nG(pS*gS + 2pS + pS/2 + pS*gS)] = O[sR + pS + nG(pS*gS + 2pS + pS/2 + pS*gS)]
-                                       = O[sR + pS + nG(pS*gS + pS)]
-                                       = O[sR + pS + nG*pS(gS)]
-                                       = O[sR + pS*nG*gS]
-
-```
-La complejidad, entonces, está dada por: **O(*searchRange + genomeSize x populationSize x numGenerations*)**
-
   for i in range(pS):  ------------------------------------------------> O(pS)
     individual = []  ---------------------------------------------> O(1)
     individual += [np.random.choice(geneticPool[0])] -------------> O(1)
@@ -76,35 +65,46 @@ La complejidad, entonces, está dada por: **O(*searchRange + genomeSize x popula
 
 ```
 
+**Complejidad Específica**
+```
+
+O[sR + pS + nG(pS*gS + 2pS + pS/2 + pS*gS)] = O[sR + pS + nG(pS*gS + 2pS + pS/2 + pS*gS)]
+                                       = O[sR + pS + nG(pS*gS + pS)]
+                                       = O[sR + pS + nG*pS(gS)]
+                                       = O[sR + pS*nG*gS]
+
+```
+La complejidad, entonces, está dada por: **O(*searchRange + genomeSize x populationSize x numGenerations*)**
+
 ## **Preguntas Finales**
 
 1.   **Cómo reacciona el algoritmo a variadas funciones de optimización (lineal, oscilantes (varias frecuencias), etc)?**
 
-    Al aumentar la longitud de onda en la función oscilante, se puede evidenciar que el error promedio tiende a acelerar su reducción hacia el 0, probablemente debido a la disminución del número de máximos locales.
+Al aumentar la longitud de onda en la función oscilante, se puede evidenciar que el error promedio tiende a acelerar su reducción hacia el 0, probablemente debido a la disminución del número de máximos locales.
 
-    ![image.png](https://i.ibb.co/SQ0Kx3z/Captura-de-pantalla-908.png)
+![image.png](https://i.ibb.co/SQ0Kx3z/Captura-de-pantalla-908.png)
 
-    Por supuesto, con funciones polinómicas o lineales, la convergencia es aún más veloz:
+Por supuesto, con funciones polinómicas o lineales, la convergencia es aún más veloz:
 
-    ![image.png](https://i.ibb.co/ZMwW697/Sin-t-tulo.png)
+![image.png](https://i.ibb.co/ZMwW697/Sin-t-tulo.png)
 
 
 2.   **Relacion entre los parámetros de configuración y el costo (tiempo y espacio)**
 
-    La complejidad depende principalmente de tres parámetros: **genomeSize**, **populationSize** y **numGenerations**. Por lo tanto, todos influyen de manera importante en el costo del algoritmo. 
+La complejidad depende principalmente de tres parámetros: **genomeSize**, **populationSize** y **numGenerations**. Por lo tanto, todos influyen de manera importante en el costo del algoritmo. 
 
-    El *genomeSize* y *populationSize* se deben tener en cuenta especialmente para la memoria, pues hay que recordar que el algoritmo almacena la población mediante una matriz de tamaño populationSize x genomeSize. **Tomar grandes valores de población y/o de genoma aumentará el uso de memoria**
+El *genomeSize* y *populationSize* se deben tener en cuenta especialmente para la memoria, pues hay que recordar que el algoritmo almacena la población mediante una matriz de tamaño populationSize x genomeSize. **Tomar grandes valores de población y/o de genoma aumentará el uso de memoria**
 
-    Por supuesto, usar un *numGenerations* muy grande **ayudará a mejorar la precisión** del valor óptimo, con más generaciones "evolucionando" hacia el valor deseado. Sin embargo, al estar multiplicada su complejidad con los otros dos parámetros, se presenta un aumento considerable en el tiempo total del algoritmo.
-  
-    Por otro lado, es necesario tener en cuenta que a un mayor rango de búsqueda, se generará una lista de tamaño *searchRange*, que para rangos razonables parece no afectar el algoritmo, sin embargo en la complejidad asintótica será de importancia a nivel de espacio. 
+Por supuesto, usar un *numGenerations* muy grande **ayudará a mejorar la precisión** del valor óptimo, con más generaciones "evolucionando" hacia el valor deseado. Sin embargo, al estar multiplicada su complejidad con los otros dos parámetros, se presenta un aumento considerable en el tiempo total del algoritmo.
+
+Por otro lado, es necesario tener en cuenta que a un mayor rango de búsqueda, se generará una lista de tamaño *searchRange*, que para rangos razonables parece no afectar el algoritmo, sin embargo en la complejidad asintótica será de importancia a nivel de espacio. 
 
 
 3.   **¿Qué parámetro considera usted más relevante para acelerar la convergencia de la búsqueda?**
 
-    El tamaño del genoma de cada individuo puede ser uno de los parámetros que puede reducirse. Cuando lo disminuimos, usualmente se requieren menos generaciones para que la población se acerque a valores cercanos al óptimo. 
+El tamaño del genoma de cada individuo puede ser uno de los parámetros que puede reducirse. Cuando lo disminuimos, usualmente se requieren menos generaciones para que la población se acerque a valores cercanos al óptimo. 
 
-    Finalmente, si se quiere más precisión (sacrificando la rapidez) se puede usar un número muy grande de generaciones.
+Finalmente, si se quiere más precisión (sacrificando la rapidez) se puede usar un número muy grande de generaciones.
 
 
 
