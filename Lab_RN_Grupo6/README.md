@@ -1,4 +1,4 @@
-﻿# Laboratorio - Redes Neuronales
+# Laboratorio - Redes Neuronales
 ##  Descripción
 Se analiza la implementación del código de Red Neuronal para Clasificación Binaria en Numpy, su complejidad en tiempo y el impacto en el cambio que tiene el cambio de distintas variables en el rendimiento del algoritmo. Además se realiza una comparación entre dos funciones de activación: Sigmoide y Tangencial Hiperbólica 
 ## Complejidad Big O
